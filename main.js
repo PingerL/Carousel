@@ -7,6 +7,7 @@ class Carousel{
     this.pre = root.querySelector('.pre')
     this.next = root.querySelector('.next')
     this.bind()
+    this.autoPlay()
   }
 
   get index(){
@@ -40,7 +41,7 @@ class Carousel{
   }
 
   showPage(curIndex){
-    console.log('curIndex ->',curIndex)
+    // console.log('curIndex ->',curIndex)
     this.panels.forEach(panel => {panel.style.zIndex = 0})
     this.panels[curIndex].style.zIndex = 10
   }
@@ -48,6 +49,15 @@ class Carousel{
   setDot(curIndex){
     this.dots.forEach(dot => {dot.classList.remove('active')})
     this.dots[curIndex].classList.add('active')
+  }
+
+  autoPlay(){
+    this.autoClock = setInterval(() => {
+      this.next.onclick()
+    }, 2000)
+  }
+  stopPlay(){
+    clearInterval(this.autoClock)
   }
 
 }
