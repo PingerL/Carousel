@@ -38,6 +38,9 @@ class Carousel{
       this.showPage(this.nextIndex)
       this.setDot(this.nextIndex)
     }
+
+   this.root.addEventListener("mouseenter", ()=>{console.log('mouseenter');this.stopPlay()} )
+   this.root.addEventListener("mouseleave", ()=>{console.log('mouseleave');this.autoPlay()} )
   }
 
   showPage(curIndex){

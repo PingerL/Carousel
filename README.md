@@ -12,3 +12,4 @@
 5. 箭头函数 `() => { }`的使用
 6. `setInterval()` 和 `clearInterval()`的使用
 7. 数组方法`indexof(element)`，查找数组内指定元素位置，查找到第一个后返回其索引，没有查找到返回-1
+8. `mouseleave` 和 `mouseenter`事件
