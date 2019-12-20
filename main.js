@@ -22,11 +22,20 @@ class Carousel{
   bind(){
     this.dotCt.onclick = e => {
       if(e.target.tagName !== 'SPAN') return // 确保是小圆点触发的事件
-      // let lastIndex = this.index  // 这里的 index 是一个函数，与 get 语法相关
       let curIndex = this.dots.indexOf(e.target)
 
       this.showPage(curIndex)
       this.setDot(curIndex)
+    }
+
+    this.pre.onclick = () => {
+      this.showPage(this.preIndex) // 这里的 preIndex 是一个函数，与 get 语法相关
+      this.setDot(this.preIndex)
+    }
+
+    this.next.onclick = () => {
+      this.showPage(this.nextIndex)
+      this.setDot(this.nextIndex)
     }
   }
 
